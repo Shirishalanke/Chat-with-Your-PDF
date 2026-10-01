@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+    --ink: #1d2b36;
+    --ink-soft: #5b6b78;
+    --paper: #f3f6f8;
+    --surface: #ffffff;
+    --line: #d6dee4;
+    --accent: #1f6f78;
+    --accent-dark: #164f56;
+    --accent-tint: #e3f1f2;
+}
+
+/* ---------- Base ---------- */
+html, body, [class*="css"], .stApp {
+    font-family: 'Inter', system-ui, sans-serif;
+    color: var(--ink);
+}
+
+.stApp {
+    background: var(--paper);
+}
+
+.block-container {
+    max-width: 780px;
+    padding-top: 3rem;
+    padding-bottom: 4rem;
+}
+
+/* ---------- Top bar ---------- */
+[data-testid="stHeader"] {
+    background: var(--paper);
+}
+
+[data-testid="stHeader"] *,
+[data-testid="stToolbar"] * {
+    color: var(--ink) !important;
+}
+
+/* ---------- Headings ---------- */
+h1, h2, h3, h4,
+[data-testid="stHeading"] {
+    font-family: 'Fraunces', Georgia, serif;
+    color: var(--ink) !important;
+}
+
+h1 {
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+h2, h3 {
+    font-weight: 600;
+}
+
+/* ---------- Text ---------- */
+[data-testid="stMarkdownContainer"],
+[data-testid="stMarkdownContainer"] p,
+[data-testid="stMarkdownContainer"] li,
+[data-testid="stText"],
+.stApp p {
+    color: var(--ink);
+    line-height: 1.65;
+}
+
+[data-testid="stWidgetLabel"],
+[data-testid="stWidgetLabel"] p,
+label,
+label p {
+    color: var(--ink) !important;
+    font-weight: 500;
+}
+
+/* ---------- File uploader ---------- */
+[data-testid="stFileUploader"] section {
+    background: var(--surface);
+    border: 2px dashed var(--accent);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: background 0.2s ease;
+}
+
+[data-testid="stFileUploader"] section:hover {
+    background: var(--accent-tint);
+}
+
+[data-testid="stFileUploaderDropzoneInstructions"],
+[data-testid="stFileUploaderDropzoneInstructions"] span,
+[data-testid="stFileUploaderDropzoneInstructions"] small,
+[data-testid="stFileUploader"] small,
+[data-testid="stFileUploader"] section span {
+    color: var(--ink-soft) !important;
+}
+
+[data-testid="stFileUploader"] button,
+[data-testid="stFileUploader"] button * {
+    background-color: var(--accent);
+    color: #ffffff !important;
+    border-radius: 8px;
+}
+
+[data-testid="stFileUploader"] button:hover,
+[data-testid="stFileUploader"] button:hover * {
+    background-color: var(--accent-dark);
+}
+
+[data-testid="stFileUploaderFile"],
+[data-testid="stFileUploaderFileName"],
+[data-testid="stFileUploaderFile"] small,
+[data-testid="stFileUploaderFile"] span {
+    color: var(--ink) !important;
+}
+
+/* ---------- Text input ---------- */
+[data-testid="stTextInput"] input {
+    background: var(--surface) !important;
+    color: var(--ink) !important;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+}
+
+[data-testid="stTextInput"] input::placeholder {
+    color: var(--ink-soft);
+    opacity: 1;
+}
+
+[data-testid="stTextInput"] input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(31, 111, 120, 0.2);
+    outline: none;
+}
+
+/* ---------- Buttons ---------- */
+.stButton > button {
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.6rem 1.4rem;
+    font-weight: 600;
+}
+
+.stButton > button:hover {
+    background: var(--accent-dark);
+    color: #fff;
+}
+
+/* ---------- Alerts (info / success / error) ---------- */
+[data-testid="stAlert"] {
+    border-radius: 10px;
+    border: 1px solid var(--line);
+}
+
+[data-testid="stAlert"],
+[data-testid="stAlert"] p,
+[data-testid="stAlert"] div,
+[data-testid="stAlertContentInfo"],
+[data-testid="stAlertContentSuccess"],
+[data-testid="stAlertContentError"] {
+    color: var(--ink) !important;
+}
+
+/* ---------- Expander (retrieved context) ---------- */
+[data-testid="stExpander"] {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+}
+
+[data-testid="stExpander"] summary,
+[data-testid="stExpander"] summary p,
+[data-testid="stExpander"] summary span,
+[data-testid="stExpander"] details,
+[data-testid="stExpander"] p {
+    color: var(--ink) !important;
+}
+
+[data-testid="stExpander"] summary svg {
+    fill: var(--ink);
+}
+
+/* ---------- Spinner ---------- */
+[data-testid="stSpinner"],
+[data-testid="stSpinner"] p,
+[data-testid="stSpinner"] * {
+    color: var(--ink) !important;
+}
+
+/* ---------- Divider ---------- */
+hr {
+    border-color: var(--line);
+    margin: 2rem 0;
+}
+
+/* ---------- Hide default Streamlit chrome ---------- */
+#MainMenu, footer {
+    visibility: hidden;
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 640px) {
+    .block-container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        padding-top: 2rem;
+    }
+}
